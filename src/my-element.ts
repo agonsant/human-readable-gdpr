@@ -39,7 +39,7 @@ export class MyElement extends LitElement {
       padding:10px 20px;
       margin:0px 2px;
       background:#000;
-      display:inline-block;
+      display: inline-block;
       color:#fff;
       border-radius:3px 3px 0px 0px;
       box-shadow: 0 0.5rem 0.8rem #00000080;
@@ -95,13 +95,12 @@ export class MyElement extends LitElement {
       border-style: solid;
       transition: 0.3s;
       flex: 1 0 25%;
-      margin: 5px;
-      padding: 5px;
+      margin: 5px 15px 5px 15px;
       color: dodgerblue;
     }
 
     .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
     }
 
     img {
@@ -112,37 +111,105 @@ export class MyElement extends LitElement {
       display:flex;
       flex-direction: row;
       flex-wrap: wrap;
-      align-items: stretch;
       text-align: center;
       justify-content: space-between;
       padding-top: 10px;
-      margin-left: 100px;
-      margin-right: 100px;
+      margin-left: 80px;
+      margin-right: 80px;
     }
 
     .icon{
       width:100px;
       padding-top:10px;
     }
-  `;
 
-  /**
-   * The name to say "Hello" to.
-   */
-  @property()
-  name = 'World';
+    .container{
+      flex: 1 0 25%;
+      padding: 5px;
+    }
+
+    .text{
+      margin: 15px 15px 5px 15px;
+      text-align: justify;
+    }
+
+    .button {
+      background-color: transparent;
+      border: none;
+      color: dodgerblue;
+      font-weight: bold;
+      width: 100%;
+      height: 50px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      border-top: 3px solid #000;
+    }
+  `;
 
   /**
    * Data elements for first panel.
    */
   @property({type: Array})
-  data = [];
+  data = [""];
 
   /**
-   * Image elements for first panel.
+   * Image elements for data panel.
    */
   @property({type: Array})
-  images = [""];
+  dataImages = [""];
+
+  /**
+   * Data usage title.
+   */
+  @property({type: Array})
+  usage = [""];
+
+  /**
+   * Image elements for usage panel.
+   */
+  @property({type: Array})
+  usageImages = [""];
+
+  /**
+   * Data usage description.
+   */
+  @property({type: Array})
+  usageDescription = [""];
+
+  /**
+   * User data rights title.
+   */
+  @property({type: Array})
+  yourData = [""];
+
+  /**
+   * User data rights description.
+   */
+  @property({type: Array})
+  yourDataLinks = [""]; 
+
+  /**
+   * How do we protect your data title.
+   */
+  @property({type: Array})
+  protection = [""];
+
+  /**
+   * Image elements for protection panel.
+   */
+  @property({type: Array})
+  protectionImages = [""];
+
+  /**
+   * How do we protect your data description.
+   */
+  @property({type: Array})
+  protectionDescription = [""];
 
   render() {
     return html`
@@ -164,32 +231,61 @@ export class MyElement extends LitElement {
               ${this.data.map((e, i) => 
                 html`
                   <div class="card">
-                    <img src="${this.images[i]}" alt="Avatar" class="icon">
+                    <img src="${this.dataImages[i]}" alt="Avatar" class="icon">
                     <h4><b>${e}</b></h4>   
                   </div>
                 `)}
-                </div>
+            </div>
           </div>
           <div class="panel" id="two-panel">
             <div class="panel-title">Uso de tus datos</div>
-            <p>You will learn many aspects of styling web pages! You’ll be able to set up the correct file structure, edit text and colors, and create attractive layouts. With these skills, you’ll be able to customize the appearance of your web pages to suit your every need!</p>
+            <div class="items">
+              ${this.usage.map((e, i) => 
+                html`
+                  <div class="container">
+                    <div class="card">
+                      <img src="${this.usageImages[i]}" alt="Avatar" class="icon">
+                      <h4><b>${e}</b></h4>   
+                    </div>
+                    <p class="text">${this.usageDescription[i]}</p>
+                  </div>
+                `)}
+            </div>
           </div>
           <div class="panel" id="three-panel">
             <div class="panel-title">Tus datos</div>
-            <p>We recommend that you complete Learn HTML before learning CSS.</p>
+            <div class="items">
+              ${this.yourData.map((e, i) => 
+                html`
+                  <div class="container">
+                  <form action="${this.yourDataLinks[i]}">
+                      <div class="card">
+                        <input type="submit" value="${e}" class="button" />
+                      </div>
+                    </form>
+                  </div>
+                `)}
+            </div>
           </div>
           <div class="panel" id="four-panel">
             <div class="panel-title">¿Cómo protegemos tus datos?</div>
-            <p>We recommend that you complete Learn HTML before learning CSS.</p>
+            <div class="items">
+              ${this.protection.map((e, i) => 
+                html`
+                  <div class="container">
+                    <div class="card">
+                      <img src="${this.protectionImages[i]}" alt="Avatar" class="icon">
+                      <h4><b>${e}</b></h4>   
+                    </div>
+                    <p class="text">${this.protectionDescription[i]}</p>
+                  </div>
+                `)}
+            </div>
+          </div>
           </div>
         </div>
       </div>
-      <slot></slot>
     `;
-  }
-
-  foo(): string {
-    return 'foo';
   }
 }
 
