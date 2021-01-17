@@ -13,43 +13,43 @@ description: A basic example using JS to add information
         gdprComponent.user = [
           {
             title: 'Name and Surname',
-            iconURL: '/assets/user-info.png'
+            iconURL: '/brief-me-gdpr/assets/user-info.png'
           },
           {
             title: 'Location',
-            iconURL: '/assets/location.png'
+            iconURL: '/brief-me-gdpr/assets/location.png'
           },
           {
             title: 'Phone Number',
-            iconURL: '/assets/phone-number.png'
+            iconURL: '/brief-me-gdpr/assets/phone-number.png'
           },
           {
             title: 'Email',
-            iconURL: '/assets/email.png'
+            iconURL: '/brief-me-gdpr/assets/email.png'
           },
           {
             title: 'Financials Info',
-            iconURL: '/assets/financial.png'
+            iconURL: '/brief-me-gdpr/assets/financial.png'
           },
           {
             title: 'Working Information',
-            iconURL: '/assets/job.png'
+            iconURL: '/brief-me-gdpr/assets/job.png'
           }
         ];
         gdprComponent.usage = [
           {
             title: 'Web Operation',
-            iconURL: '/assets/web.png',
+            iconURL: '/brief-me-gdpr/assets/web.png',
             description: 'We use some of your data for our web proper operation'
           },
           {
             title: 'Comercial',
-            iconURL: '/assets/comercial.png',
+            iconURL: '/brief-me-gdpr/assets/comercial.png',
             description: 'We use some of your data for commercial purposes, such us offer you a filtered product'
           },
           {
             title: 'Analytics',
-            iconURL: '/assets/analytics.png',
+            iconURL: '/brief-me-gdpr/assets/analytics.png',
             description: 'We improve our website by seeing how you browse'
           }
         ];
@@ -57,17 +57,17 @@ description: A basic example using JS to add information
         gdprComponent.protection = [
           {
             title: 'Data Protection Officer',
-            iconURL: '/assets/officer.png',
+            iconURL: '/brief-me-gdpr/assets/officer.png',
             description: 'A DPO is responsible for overseeing the data protection approach, strategy, and its implementation'
           },
           {
             title: 'Security',
-            iconURL: '/assets/security.png',
+            iconURL: '/brief-me-gdpr/assets/security.png',
             description: 'We follow all security protocols and keep our systems updated, eliminating vulnerabilities'
           },
           {
             title: 'Encryption',
-            iconURL: '/assets/encryption.png',
+            iconURL: '/brief-me-gdpr/assets/encryption.png',
             description: 'We store your encrypted data in an independent database'          }
         ];
 
@@ -117,23 +117,23 @@ description: A basic example using JS to add information
       customElements.whenDefined('brief-me-gdpr').then(wc => {
         gdprComponent = document.getElementById('example');
         gdprComponent.user = [
-          { title: 'Name and Surname', iconURL: '/assets/user-info.png' },
-          { title: 'Location',iconURL: '/assets/location.png'},
-          { title: 'Phone Number', iconURL: '/assets/phone-number.png' },
-          { title: 'Email', iconURL: '/assets/email.png' },
-          { title: 'Financials Info', iconURL: '/assets/financial.png' },
-          { title: 'Working Information', iconURL: '/assets/job.png' }
+          { title: 'Name and Surname', iconURL: '/brief-me-gdpr/assets/user-info.png' },
+          { title: 'Location',iconURL: '/brief-me-gdpr/assets/location.png'},
+          { title: 'Phone Number', iconURL: '/brief-me-gdpr/assets/phone-number.png' },
+          { title: 'Email', iconURL: '/brief-me-gdpr/assets/email.png' },
+          { title: 'Financials Info', iconURL: '/brief-me-gdpr/assets/financial.png' },
+          { title: 'Working Information', iconURL: '/brief-me-gdpr/assets/job.png' }
         ];
         gdprComponent.usage = [
-          { title: 'Web Operation', iconURL: '/assets/web.png', description: 'We use some of your data for our web proper operation' },
-          { title: 'Comercial', iconURL: '/assets/comercial.png', description: 'We use some of your data for commercial purposes, such us offer you a filtered product' },
-          { title: 'Analytics', iconURL: '/assets/analytics.png', description: 'We improve our website by seeing how you browse' }
+          { title: 'Web Operation', iconURL: '/brief-me-gdpr/assets/web.png', description: 'We use some of your data for our web proper operation' },
+          { title: 'Comercial', iconURL: '/brief-me-gdpr/assets/comercial.png', description: 'We use some of your data for commercial purposes, such us offer you a filtered product' },
+          { title: 'Analytics', iconURL: '/brief-me-gdpr/assets/analytics.png', description: 'We improve our website by seeing how you browse' }
         ];
 
         gdprComponent.protection = [
-          { title: 'Data Protection Officer', iconURL: '/assets/officer.png', description: 'A DPO is responsible for overseeing the data protection approach, strategy, and its implementation' },
-          { title: 'Security', iconURL: '/assets/security.png', description: 'We follow all security protocols and keep our systems updated, eliminating vulnerabilities'},
-          { title: 'Encryption', iconURL: '/assets/encryption.png', description: 'We store your encrypted data in an independent database' }
+          { title: 'Data Protection Officer', iconURL: '/brief-me-gdpr/assets/officer.png', description: 'A DPO is responsible for overseeing the data protection approach, strategy, and its implementation' },
+          { title: 'Security', iconURL: '/brief-me-gdpr/assets/security.png', description: 'We follow all security protocols and keep our systems updated, eliminating vulnerabilities'},
+          { title: 'Encryption', iconURL: '/brief-me-gdpr/assets/encryption.png', description: 'We store your encrypted data in an independent database' }
         ];
 
         gdprComponent.management = [
