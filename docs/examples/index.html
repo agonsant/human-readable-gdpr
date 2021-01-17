@@ -33,19 +33,113 @@
         <ul>
           
                   <li class=selected>
-                    <a href="">A basic example</a>
-                  </li>
-                
-                  <li class=>
-                    <a href="name-property/">Setting the name property</a>
+                    <a href="">A basic example using JS to add information</a>
                   </li>
                 
         </ul>
       </nav>
       <div>
-        <p><brief-me-gdpr></brief-me-gdpr></p>
+        <p><brief-me-gdpr id="example"></brief-me-gdpr></p>
+<script>
+      customElements.whenDefined('brief-me-gdpr').then(wc => {
+        gdprComponent = document.getElementById('example');
+        gdprComponent.user = [
+          {
+            title: 'Name and Surname',
+            iconURL: '/assets/user-info.png'
+          },
+          {
+            title: 'Location',
+            iconURL: '/assets/location.png'
+          },
+          {
+            title: 'Phone Number',
+            iconURL: '/assets/phone-number.png'
+          },
+          {
+            title: 'Email',
+            iconURL: '/assets/email.png'
+          },
+          {
+            title: 'Financials Info',
+            iconURL: '/assets/financial.png'
+          },
+          {
+            title: 'Working Information',
+            iconURL: '/assets/job.png'
+          }
+        ];
+        gdprComponent.usage = [
+          {
+            title: 'Web Operation',
+            iconURL: '/assets/web.png',
+            description: 'We use some of your data for our web proper operation'
+          },
+          {
+            title: 'Comercial',
+            iconURL: '/assets/comercial.png',
+            description: 'We use some of your data for commercial purposes, such us offer you a filtered product'
+          },
+          {
+            title: 'Analytics',
+            iconURL: '/assets/analytics.png',
+            description: 'We improve our website by seeing how you browse'
+          }
+        ];
+
+        gdprComponent.protection = [
+          {
+            title: 'Data Protection Officer',
+            iconURL: '/assets/officer.png',
+            description: 'A DPO is responsible for overseeing the data protection approach, strategy, and its implementation'
+          },
+          {
+            title: 'Security',
+            iconURL: '/assets/security.png',
+            description: 'We follow all security protocols and keep our systems updated, eliminating vulnerabilities'
+          },
+          {
+            title: 'Encryption',
+            iconURL: '/assets/encryption.png',
+            description: 'We store your encrypted data in an independent database'          }
+        ];
+
+        gdprComponent.management = [
+          {
+            title: 'Access',
+            action: (ev) => console.log('User has clicked on Access')
+          },
+          {
+            title: 'Modify',
+            action: (ev) => console.log('User has clicked on Modify')
+          },
+          {
+            title: 'Erase',
+            action: (ev) => console.log('User has clicked on Erase')      
+          },
+          {
+            title: 'Port',
+            action: (ev) => console.log('User has clicked on Portability')      
+          },
+          {
+            title: 'Forget',
+            action: (ev) => console.log('User has clicked on Forget')      
+          },
+          {
+            title: 'Oppose',
+            action: (ev) => console.log('User has clicked on Oppose')      
+          },
+          {
+            title: 'Restrict its usage',
+            action: (ev) => console.log('User has clicked on Restrict')      
+          }
+        ]
+      })
+    </script>
 <h3>HTML</h3>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>brief-me-gdpr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>brief-me-gdpr</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brief-me-gdpr.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>brief-me-gdpr</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>brief-me-gdpr</span><span class="token punctuation">></span></span></code></pre>
+<h3>JS</h3>
+<pre class="language-js"><code class="language-js">      customElements<span class="token punctuation">.</span><span class="token function">whenDefined</span><span class="token punctuation">(</span><span class="token string">'brief-me-gdpr'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">wc</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        gdprComponent <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'example'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        gdprComponent<span class="token punctuation">.</span>user <span class="token operator">=</span> <span class="token punctuation">[</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Name and Surname'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/user-info.png'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Location'</span><span class="token punctuation">,</span>iconURL<span class="token operator">:</span> <span class="token string">'/assets/location.png'</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Phone Number'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/phone-number.png'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Email'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/email.png'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Financials Info'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/financial.png'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Working Information'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/job.png'</span> <span class="token punctuation">}</span><br>        <span class="token punctuation">]</span><span class="token punctuation">;</span><br>        gdprComponent<span class="token punctuation">.</span>usage <span class="token operator">=</span> <span class="token punctuation">[</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Web Operation'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/web.png'</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'We use some of your data for our web proper operation'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Comercial'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/comercial.png'</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'We use some of your data for commercial purposes, such us offer you a filtered product'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Analytics'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/analytics.png'</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'We improve our website by seeing how you browse'</span> <span class="token punctuation">}</span><br>        <span class="token punctuation">]</span><span class="token punctuation">;</span><br><br>        gdprComponent<span class="token punctuation">.</span>protection <span class="token operator">=</span> <span class="token punctuation">[</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Data Protection Officer'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/officer.png'</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'A DPO is responsible for overseeing the data protection approach, strategy, and its implementation'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Security'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/security.png'</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'We follow all security protocols and keep our systems updated, eliminating vulnerabilities'</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Encryption'</span><span class="token punctuation">,</span> iconURL<span class="token operator">:</span> <span class="token string">'/assets/encryption.png'</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'We store your encrypted data in an independent database'</span> <span class="token punctuation">}</span><br>        <span class="token punctuation">]</span><span class="token punctuation">;</span><br><br>        gdprComponent<span class="token punctuation">.</span>management <span class="token operator">=</span> <span class="token punctuation">[</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Access'</span><span class="token punctuation">,</span> <span class="token function-variable function">action</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'User has clicked on Access'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Modify'</span><span class="token punctuation">,</span> <span class="token function-variable function">action</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'User has clicked on Modify'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Erase'</span><span class="token punctuation">,</span> <span class="token function-variable function">action</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'User has clicked on Erase'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Port'</span><span class="token punctuation">,</span> <span class="token function-variable function">action</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'User has clicked on Portability'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Forget'</span><span class="token punctuation">,</span> <span class="token function-variable function">action</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'User has clicked on Forget'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Oppose'</span><span class="token punctuation">,</span> <span class="token function-variable function">action</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'User has clicked on Oppose'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>          <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">'Restrict its usage'</span><span class="token punctuation">,</span> <span class="token function-variable function">action</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'User has clicked on Restrict'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><br>        <span class="token punctuation">]</span><br>      <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
       </div>
     </section>
@@ -55,18 +149,16 @@
     
 <footer>
   <div>
-    Icons made by
-    <ul>
-     <li><a target="_blank" href="https://www.flaticon.com/authors/catalin-fertu" title="Catalin Fertu">Catalin Fertu</a></li>
-     <li><a target="_blank" href="https://www.flaticon.com/free-icon/pin_2948253?term=location&related_id=2948253" title="bqlqn">bqlqn</a></li>
-     <li><a target="_blank" href="https://www.flaticon.com/authors/prosymbols" title="Prosymbols">Prosymbols</a></li>
-     <li><a target="_blank" href="https://www.flaticon.com/authors/surang" title="surang">surang</a></li>
-     <li><a target="_blank" href="https://www.flaticon.com/authors/ultimatearm" title="ultimatearm">ultimatearm</a></li>
-     <li><a target="_blank" href="https://www.flaticon.com/authors/srip" title="srip">srip</a></li>
-     <li><a target="_blank" href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a></li>
-     <li><a target="_blank" href="http://www.freepik.com/" title="Freepik">Freepik</a></li>
-    </ul>
-    from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    <p>Icons made by</p>
+    <span><a target="_blank" href="https://www.flaticon.com/authors/catalin-fertu" title="Catalin Fertu">Catalin Fertu</a>&nbsp;</span>
+    <span><a target="_blank" href="https://www.flaticon.com/free-icon/pin_2948253?term=location&related_id=2948253" title="bqlqn">bqlqn</a>&nbsp;</span>
+    <span><a target="_blank" href="https://www.flaticon.com/authors/prosymbols" title="Prosymbols">Prosymbols</a>&nbsp;</span>
+    <span><a target="_blank" href="https://www.flaticon.com/authors/surang" title="surang">surang</a>&nbsp;</span>
+    <span><a target="_blank" href="https://www.flaticon.com/authors/ultimatearm" title="ultimatearm">ultimatearm</a>&nbsp;</span>
+    <span><a target="_blank" href="https://www.flaticon.com/authors/srip" title="srip">srip</a>&nbsp;</span>
+    <span><a target="_blank" href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a>&nbsp;</span>
+    <span><a target="_blank" href="http://www.freepik.com/" title="Freepik">Freepik</a>&nbsp;</span>
+    <p>from&nbsp;<a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
   </div>
 </footer>
   </body>

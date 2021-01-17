@@ -15,7 +15,7 @@ npm i brief-me-gdpr
 
 ## CDN
 
-npm CDNs like [unpkg.com]() can directly serve files that have been published to npm. This works great for standard JavaScript modules that the browser can load natively.
+npm CDNs like [unpkg.com](https://unpkg.com/) or [jsdelivr](https://www.jsdelivr.com/) can directly serve files that have been published to npm. This works great for standard JavaScript modules that the browser can load natively.
 
 For this element to work from unpkg.com specifically, you need to include the `?module` query parameter, which tells unpkg.com to rewrite "bare" module specificers to full URLs.
 
@@ -27,6 +27,6 @@ For this element to work from unpkg.com specifically, you need to include the `?
 
 ### JavaScript
 
-```html
-import {MyElement} from 'https://unpkg.com/brief-me-gdpr?module';
+```js
+import { BriefMeGDPR } from 'https://unpkg.com/brief-me-gdpr?module';
 ```
