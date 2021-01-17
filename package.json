@@ -2,10 +2,10 @@
   "name": "brief-me-gdpr",
   "version": "1.0.0",
   "description": "Web Component for a human readable summary of your company GDPR compliant",
-  "main": "brief-me-gdpr.js",
-  "module": "brief-me-gdpr.js",
+  "main": "dist/brief-me-gdpr.js",
+  "module": "dist/brief-me-gdpr.js",
   "files": [
-    "dist"
+    "dist/"
   ],
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/agonsant/breif-me-gdpr/issues"
   },
-  "homepage": "https://github.com/agonsant/brief-me-gdpr#readme",
+  "homepage": "https://agonsant.github.io/brief-me-gdpr/",
   "engines": {
     "node": ">=12.0.0",
     "npm": ">=6.0.0"
