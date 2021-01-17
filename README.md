@@ -1,6 +1,6 @@
 # Brief Me GDPR
 
-Web Component for a human readable summary of your company GDPR
+Web Component for a human readable GDPR compliance
 
 ## Setup
 
@@ -28,7 +28,7 @@ npm run build:watch
 
 Both the TypeScript compiler and lit-analyzer are configured to be very strict. You may want to change `tsconfig.json` to make them less strict.
 
-## Testing
+## Testing (:construction:)
 
 This sample uses Karma, Chai, Mocha, and the open-wc test helpers for testing. See the [open-wc testing documentation](https://open-wc.org/testing/testing.html) for more information.
 
@@ -48,18 +48,19 @@ To run the dev server and open the project in a new browser tab:
 npm run serve
 ```
 
-There is a development HTML file located at `/dev/index.html` that you can view at http://localhost:8000/dev/index.html.
+There is a development HTML file located at `/dev/index.html` that you can view at <http://localhost:8000/dev/index.html>.
 
 ## Editing
 
 If you use VS Code, we highly reccomend the [lit-plugin extension](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin), which enables some extremely useful features for lit-html templates:
-  - Syntax highlighting
-  - Type-checking
-  - Code completion
-  - Hover-over docs
-  - Jump to definition
-  - Linting
-  - Quick Fixes
+
+- Syntax highlighting
+- Type-checking
+- Code completion
+- Hover-over docs
+- Jump to definition
+- Linting
+- Quick Fixes
   
   The project is setup to reccomend lit-plugin to VS Code users if they don't already have it installed.
 
@@ -105,7 +106,7 @@ To watch the site files, and re-build automatically, run:
 npm run docs:watch
 ```
 
-The site will usually be served at http://localhost:8000.
+The site will usually be served at <http://localhost:8000>.
 
 ## Bundling and minification
 
@@ -116,4 +117,3 @@ For information on building application projects that include LitElement compone
 ## More information
 
 See [Get started](https://lit-element.polymer-project.org/guide/start) on the LitElement site for more information.
-

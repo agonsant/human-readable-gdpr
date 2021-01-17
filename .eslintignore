@@ -1,0 +1,17 @@
+### Config files
+.eslintrc.js
+*.config.js
+karma.conf.cjs
+
+__mocks__
+
+### Generated files
+
+dist
+build
+docs
+docs-src
+
+## Dependencies
+
+node_modules/

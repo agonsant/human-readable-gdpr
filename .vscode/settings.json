@@ -1,0 +1,10 @@
+{
+  "[json]": {
+    "editor.formatOnSave": true // Let Prettier format JSON files
+  },
+  "eslint.validate": ["javascript", "typescript"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.markdownlint": false
+  }
+}

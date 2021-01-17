@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>&lt;my-element> Demo</title>
-    <base href="/build/">
+    <meta charset="utf-8" />
+    <title>&lt;brief-me-gdpr> Demo</title>
+    <base href="/build/" />
     <script type="module" src="main.js"></script>
     <style>
       p {
@@ -14,32 +14,111 @@
     </style>
   </head>
   <body>
-    <my-element
-      data='["Nombre y Apellidos", "Localización", "Número de telefono", "Correo", "Datos financieros", "Información laboral"]' 
-      dataImages='["https://www.flaticon.com/svg/vstatic/svg/747/747376.svg?token=exp=1610371803~hmac=e4f503b0f2a7db6b6b3727a726e3b7c7", 
-      "https://www.flaticon.com/svg/vstatic/svg/1332/1332768.svg?token=exp=1610375551~hmac=41be5072a4cc28d1fa1f0e5bce677599", 
-      "https://www.flaticon.com/svg/vstatic/svg/1168/1168343.svg?token=exp=1610375631~hmac=30b0d452d244a25fe80e3a931d34979b", 
-      "https://www.flaticon.com/svg/vstatic/svg/1542/1542387.svg?token=exp=1610375649~hmac=3555275c4ce9105f3c4581c4135c75b0", 
-      "https://www.flaticon.com/svg/vstatic/svg/2866/2866943.svg?token=exp=1610375674~hmac=a7f50ebc2b76a4255734c75e8d04b2dd", 
-      "https://www.flaticon.com/svg/vstatic/svg/1470/1470447.svg?token=exp=1610375720~hmac=2656dc8f034a984b084e66ef1e9d4c02"]'
-      usage='["Funcionamiento Web", "Comercial", "Analítica", "Supervisión"]'
-      usageImages='["https://www.flaticon.com/svg/vstatic/svg/1876/1876351.svg?token=exp=1610407277~hmac=38a168d34a7f06f3e0e30faba7093f00",
-      "https://www.flaticon.com/svg/vstatic/svg/816/816738.svg?token=exp=1610407764~hmac=dfde7891dcb06f991ec6d4602437968c",
-      "https://www.flaticon.com/svg/vstatic/svg/3659/3659618.svg?token=exp=1610407811~hmac=5c5bd32e1b0c5b703960cac98a730736",
-      "https://www.flaticon.com/svg/vstatic/svg/1645/1645225.svg?token=exp=1610409891~hmac=d0a1783a93492003515bcfbfa51b033c"]'
-      usageDescription='["lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      "ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      "lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]'
-      yourData='["Accede a ellos", "Modificalos", "Eliminalos", "Restringelos", "Mas"]'
-      yourDataLinks='["https://google.es", "https://www.bing.com/?cc=es", "https://es.yahoo.com/", "https://aol.com"]'
-      protection='["Responsable de la empresa", "Seguridad de tus datos", "Cifrado"]'
-      protectionImages='["https://www.flaticon.com/svg/vstatic/svg/747/747376.svg?token=exp=1610371803~hmac=e4f503b0f2a7db6b6b3727a726e3b7c7",
-      "https://www.flaticon.com/svg/vstatic/svg/3730/3730463.svg?token=exp=1610410507~hmac=210be28be3d9aa8c148b13cd30163d5f",
-      "https://www.flaticon.es/svg/vstatic/svg/1287/1287558.svg?token=exp=1610412545~hmac=8f9afa49a60c9c459bfb2d2b330fb137"]'
-      protectionDescription='["lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullam...     Ver más",
-      "lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullam...     Ver más",
-      "lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullam...     Ver más"]'>
-  </my-element>
+    <brief-me-gdpr id="example-1"
+      user = '[{"title":"Name and Surname","iconURL":"/build/assets/user-info.png"},{"title":"Location","iconURL":"/build/assets/location.png"},{"title":"Phone Number","iconURL":"/build/assets/phone-number.png"},{"title":"Email","iconURL":"/build/assets/email.png"},{"title":"Financial Info","iconURL":"/build/assets/financial.png"},{"title":"Working Information","iconURL":"/build/assets/job.png"}]'
+      usage='[{"title":"Web Operation","iconURL":"/build/assets/web.png","description":"We use some of your data for our web proper operation"},{"title":"Comercial","iconURL":"/build/assets/comercial.png","description":"We use some of your data for commercial purposes, such us offer you a filtered product"},{"title":"Analytics","iconURL":"/build/assets/analytics.png","description":"We improve our website by seeing how you browse"}]'
+      protection='[{"title":"Data Protection Officer","iconURL":"/build/assets/officer.png","description":"A DPO is responsible for overseeing the data protection approach, strategy, and its implementation"},{"title":"Security","iconURL":"/build/assets/security.png","description":"We follow all security protocols and keep our systems updated, eliminating vulnerabilities"},{"title":"Encryption","iconURL":"/build/assets/encryption.png","description":"We store your encrypted data in an independent database"}]'
+    >
+    </brief-me-gdpr>
+    <div><brief-me-gdpr id="example-2"></brief-me-gdpr></div>
+    
+    <script>
+      customElements.whenDefined('brief-me-gdpr').then(wc => {
+        gdprComponent = document.getElementById('example-2');
+        gdprComponent.user = [
+          {
+            title: 'Name and Surname',
+            iconURL: '/build/assets/user-info.png'
+          },
+          {
+            title: 'Location',
+            iconURL: '/build/assets/location.png'
+          },
+          {
+            title: 'Phone Number',
+            iconURL: '/build/assets/phone-number.png'
+          },
+          {
+            title: 'Email',
+            iconURL: '/build/assets/email.png'
+          },
+          {
+            title: 'Financials Info',
+            iconURL: '/build/assets/financial.png'
+          },
+          {
+            title: 'Working Information',
+            iconURL: '/build/assets/job.png'
+          }
+        ];
+        gdprComponent.usage = [
+          {
+            title: 'Web Operation',
+            iconURL: '/build/assets/web.png',
+            description: 'We use some of your data for our web proper operation'
+          },
+          {
+            title: 'Comercial',
+            iconURL: '/build/assets/comercial.png',
+            description: 'We use some of your data for commercial purposes, such us offer you a filtered product'
+          },
+          {
+            title: 'Analytics',
+            iconURL: '/build/assets/analytics.png',
+            description: 'We improve our website by seeing how you browse'
+          }
+        ];
+
+        gdprComponent.protection = [
+          {
+            title: 'Data Protection Officer',
+            iconURL: '/build/assets/officer.png',
+            description: 'A DPO is responsible for overseeing the data protection approach, strategy, and its implementation'
+          },
+          {
+            title: 'Security',
+            iconURL: '/build/assets/security.png',
+            description: 'We follow all security protocols and keep our systems updated, eliminating vulnerabilities'
+          },
+          {
+            title: 'Encryption',
+            iconURL: '/build/assets/encryption.png',
+            description: 'We store your encrypted data in an independent database'          }
+        ];
+
+        const management = [
+          {
+            title: 'Access',
+            action: (ev) => console.log('User has clicked on Access')
+          },
+          {
+            title: 'Modify',
+            action: (ev) => console.log('User has clicked on Modify')
+          },
+          {
+            title: 'Erase',
+            action: (ev) => console.log('User has clicked on Erase')      
+          },
+          {
+            title: 'Port',
+            action: (ev) => console.log('User has clicked on Portability')      
+          },
+          {
+            title: 'Forget',
+            action: (ev) => console.log('User has clicked on Forget')      
+          },
+          {
+            title: 'Oppose',
+            action: (ev) => console.log('User has clicked on Oppose')      
+          },
+          {
+            title: 'Restrict its usage',
+            action: (ev) => console.log('User has clicked on Restrict')      
+          }
+        ]
+        document.getElementById('example-1').management = management;
+        gdprComponent.management = management;
+      })
+    </script>
   </body>
 </html>
