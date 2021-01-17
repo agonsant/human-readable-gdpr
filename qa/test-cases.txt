@@ -1,0 +1,61 @@
+1. Given I open the component brief me within the application, the tab 'que datos obtenemos de ti' is selected by default
+then it displays 6 squares 'Nombre y apellidos'| 'Localización' | 'Numero de telefono' | 'Correo' | 'Datos financieros'| 'información laboral'
+
+2. Given I open the component brief me within the application, the tab 'que datos obtenemos de ti' is selected 
+when I click  on another tab 
+then it displays information that corresponds to the tab selected.
+
+3. Given I am in the tab 'uso de tus datos'
+then it displays 3 columns'funcionamiento web', 'comercial' and 'analitica'
+and it displays small information of each subject.
+
+4. Given I am in the tab 'uso de datos de ti'
+when I click on the link 'Ver más' of the column 'funcionamiento web' | 'comercial' | 'analitica'
+then it displays the whole information related to the selected column.
+
+5. Given I am in the tab 'Tus datos'
+then it displays four buttons 'accede a ellos', 'modificar, 'cancelar','más'
+
+
+6. Given I am in the tab 'Tus datos'
+when I click on the button 'acceso a datos' | 'modificar'|'cancelar'|'mas'
+then it redirects you to another url of the application or webpage.
+
+7.Given I am in the tab '¿Cómo protegemos tus datos?'
+then it displays 2 columns 'responsable de la empresa' and 'seguridad de tus datos'
+and it displays small information of each subject.
+
+8. Given I am in the tab '¿Cómo protegemos tus datos?'
+when I click on the link 'Ver más' of the column 'responsable de la empresa' | 'seguridad de tus datos'
+then it displays the complete information related to the selected column.
+
+
+Aplicación Movil
+
+1. Given I am in  the webpage with the component brief me opened
+When I click on the option 'que datos obtenemos de ti'
+Then it shows 6 options 'Nombre y apellidos'| 'Localización' | 'Numero de telefono' | 'Correo' | 'Datos financieros'| 'información laboral'
+
+2. Given I am in  the webpage with the component brief me opened
+When I click on the main option 'uso de tus datos'
+Then it displays 3 options 'funcionamiento web', 'comercial' and 'analitica' below the main option
+
+3.Given I am in the main option 'uso de tus datos' selected
+When hovering one of the option 'funcionamiento web', 'comercial' and 'analitica' 
+Then it shows a short information with a link 'ver más'
+When clicking on 'ver más' it shows the whole information.
+
+4. Given I am in the main option 'Tus datos' selected
+when I click on the option 'acceso a datos' | 'modificar'|'cancelar'|'mas'
+then it redirects you to another url of the application or webpage.
+
+5. Given I am in the page ¿Cómo protegemos tus datos?'
+when I click on the option 'responsable de la empresa' | 'seguridad de tus datos'
+Then it shows a short information with a link 'ver más'
+When clicking on 'ver más' it shows the whole information.
+
+6. Given I am in the main option ¿Cómo protegemos tus datos?' selected
+when I click on the option 'responsable de la empresa' | 'seguridad de tus datos'
+then it redirects you to another url of the application or webpage.
+
+
