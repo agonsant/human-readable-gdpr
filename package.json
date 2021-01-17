@@ -1,6 +1,6 @@
 {
   "name": "brief-me-gdpr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web Component for a human readable summary of your company GDPR compliant",
   "main": "dist/brief-me-gdpr.js",
   "module": "dist/brief-me-gdpr.js",
