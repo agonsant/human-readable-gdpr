@@ -1,18 +1,51 @@
 {
   "name": "brief-me-gdpr",
   "version": "1.0.0",
-  "description": "A simple web component",
-  "main": "my-element.js",
-  "module": "my-element.js",
-  "type": "module",
+  "description": "Web Component for a human readable summary of your company GDPR compliant",
+  "main": "brief-me-gdpr.js",
+  "module": "brief-me-gdpr.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agonsant/brief-me-gdpr.git"
+  },
+  "keywords": [
+    "gdpr",
+    "gdpr-compliant",
+    "gdpr-component",
+    "gdpr-consent",
+    "web",
+    "webcomponent",
+    "web-component"
+  ],
+  "contributors": [
+    "Haroon Sammaraie",
+    "Alejandro Rodríguez Calzada",
+    "Oscar Canive",
+    "Maikel Spranger Hierro",
+    "Miriam Patricia Choy Castillo",
+    "Alejandro González Santiago"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agonsant/breif-me-gdpr/issues"
+  },
+  "homepage": "https://github.com/agonsant/brief-me-gdpr#readme",
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
   "scripts": {
+    "copy": "npm run copy:index && npm run copy:assets",
     "copy:index": "cp-cli src/index.html build/index.html",
+    "copy:assets": "cp-cli src/assets build/assets",
     "build": "tsc -p tsconfig.build.json",
     "build:watch": "tsc -p tsconfig.build.json --watch",
+    "build:prod": "rollup -c",
     "clean": "rimraf dist build",
-    "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
-    "lint:eslint": "eslint 'src/**/*.ts'",
+    "lint": "npm run lint:lit-analyzer && npm run lint:eslint && npm run lint:markdown",
+    "lint:eslint": "eslint . --ext js,ts,json --fix",
     "lint:lit-analyzer": "lit-analyzer",
+    "lint:markdown": "markdownlint **/*.md -i node_modules -i docs-src --fix",
     "format": "prettier src/* --write",
     "docs": "npm run docs:clean && npm run build && npm run analyze && npm run docs:build && npm run docs:assets && npm run docs:gen",
     "docs:clean": "rimraf docs",
@@ -23,40 +56,53 @@
     "docs:serve": "es-dev-server --root-dir=docs --node-resolve --watch --open",
     "analyze": "wca analyze \"src/**/*.ts\" --outFile docs/custom-elements.json",
     "serve": "es-dev-server --node-resolve --watch --open build",
-    "start": "run-p copy:index build:watch serve",
+    "start": "run-p copy build:watch serve",
     "test": "karma start karma.conf.cjs",
     "test:watch": "karma start karma.conf.cjs --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start karma.conf.cjs --update-snapshots",
     "test:prune-snapshots": "karma start karma.conf.cjs --prune-snapshots"
   },
-  "keywords": [
-    "web-components",
-    "lit-element",
-    "typescript"
-  ],
-  "author": "The Polymer Authors",
-  "license": "BSD-3-Clause",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,json,md}": [
+      "eslint . --ext js,ts,json --fix",
+      "lit-analyzer"
+    ]
+  },
   "dependencies": {
     "lit-element": "2.4.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "0.11.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "3.0.4",
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "@rollup/plugin-node-resolve": "11.0.1",
     "@rollup/plugin-replace": "2.3.4",
     "@typescript-eslint/eslint-plugin": "4.11.0",
     "@typescript-eslint/parser": "4.11.0",
-    "chai": "^4.2.0",
+    "chai": "4.2.0",
     "cp-cli": "2.0.0",
     "deepmerge": "4.2.2",
     "es-dev-server": "2.0.2",
     "eslint": "7.16.0",
+    "eslint-config-prettier": "7.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "husky": "4.3.8",
+    "lint-staged": "10.5.3",
     "lit-analyzer": "1.2.1",
+    "markdownlint-cli": "0.26.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
     "rollup": "2.35.1",
+    "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-filesize": "9.1.0",
-    "@rollup/plugin-node-resolve": "11.0.1",
     "rollup-plugin-terser": "7.0.2",
     "typescript": "4.1.3",
     "web-component-analyzer": "1.1.6"

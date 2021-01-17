@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><my-element> ⌲ Docs</title>
+    <title><brief-me-gdpr> ⌲ Docs</title>
     <link rel="stylesheet" href="../docs.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Roboto+Mono">
     <link href="../prism-okaidia.css" rel="stylesheet" />
-    <script type="module" src="../my-element.bundled.js"></script>
+    <script type="module" src="../brief-me-gdpr.js"></script>
   </head>
   <body>
     
 <header>
-  <h1>&lt;my-element></h1>
-  <h2>A web component just for me.</h2>
+  <h1>&lt;brief-me-gdpr></h1>
+  <h2>A Web Component for a human readable GDPR compliance.</h2>
 </header>
     
 <nav>
@@ -29,9 +29,9 @@
         
       <h1>API</h1>
       
-        <h2>&lt;my-element></h2>
+        <h2>&lt;brief-me-gdpr></h2>
         <div>
-          An example element.
+          A Web Component for a human readable GDPR compliance
         </div>
         
     <h3>Attributes</h3>
@@ -41,11 +41,19 @@
       </tr>
       
         <tr>
-          <td>name</td><td>The name to say "Hello" to.</td><td>string</td><td>"World"</td>
+          <td>user</td><td>Data elements for user data GDPR.</td><td>UserData[]</td><td>[]</td>
         </tr>
       
         <tr>
-          <td>count</td><td>The number of times the button has been clicked.</td><td>number</td><td>0</td>
+          <td>usage</td><td>Data usage elements.</td><td>DataUsage[]</td><td>[]</td>
+        </tr>
+      
+        <tr>
+          <td>management</td><td>User data rights.</td><td>DataManagement[]</td><td>[]</td>
+        </tr>
+      
+        <tr>
+          <td>protection</td><td>How do we protect information.</td><td>ProtectionData[]</td><td>[]</td>
         </tr>
       
     </table>
@@ -58,47 +66,31 @@
       </tr>
       
         <tr>
-          <td>styles</td><td>undefined</td><td>undefined</td><td>CSSResult</td><td>"css`\n    :host {\n      display: block;\n      border: solid 1px blue;\n      padding: 16px;\n      max-width: 800px;\n    }\n    h1 {\n      color: red;\n    }\n  `"</td>
+          <td>styles</td><td>undefined</td><td>undefined</td><td>CSSResult</td><td>"css`\r\n    h2 {\r\n      color: #000;\r\n      text-align: center;\r\n      font-size: 2em;\r\n    }\r\n    .wrapper {\r\n      display: flex;\r\n      flex-direction: column;\r\n      align-items: center;\r\n    }\r\n    .tab {\r\n      cursor: pointer;\r\n      padding: 10px 20px;\r\n      margin: 0px 2px;\r\n      background: #000;\r\n      display: inline-block;\r\n      color: #fff;\r\n      border-radius: 3px 3px 0px 0px;\r\n      box-shadow: 0 0.5rem 0.8rem #00000080;\r\n    }\r\n    .panels {\r\n      background: #fffffff6;\r\n      box-shadow: 0 2rem 2rem #00000080;\r\n      min-height: 200px;\r\n      max-width: 945px;\r\n      border-radius: 3px;\r\n      overflow: hidden;\r\n      padding: 20px;\r\n    }\r\n    .panel {\r\n      display: none;\r\n      animation: fadein 0.8s;\r\n    }\r\n    @keyframes fadein {\r\n      from {\r\n        opacity: 0;\r\n      }\r\n      to {\r\n        opacity: 1;\r\n      }\r\n    }\r\n    .panel-title {\r\n      font-size: 1.5em;\r\n      font-weight: bold;\r\n      text-align: center;\r\n    }\r\n    .radio {\r\n      display: none;\r\n    }\r\n    #one:checked ~ .panels #one-panel,\r\n    #two:checked ~ .panels #two-panel,\r\n    #three:checked ~ .panels #three-panel,\r\n    #four:checked ~ .panels #four-panel {\r\n      display: block;\r\n    }\r\n    #one:checked ~ .tabs #one-tab,\r\n    #two:checked ~ .tabs #two-tab,\r\n    #three:checked ~ .tabs #three-tab,\r\n    #four:checked ~ .tabs #four-tab {\r\n      background: #fffffff6;\r\n      color: #000;\r\n      border-top: 3px solid #000;\r\n    }\r\n\r\n    .card {\r\n      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n      border: black;\r\n      border-radius: 0.5em;\r\n      border-style: solid;\r\n      transition: 0.3s;\r\n      flex: 1 0 25%;\r\n      margin: 5px 15px 5px 15px;\r\n      color: dodgerblue;\r\n    }\r\n\r\n    .card:hover {\r\n      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);\r\n    }\r\n\r\n    img {\r\n      border-radius: 5px 5px 0 0;\r\n    }\r\n\r\n    .items {\r\n      display: flex;\r\n      flex-direction: row;\r\n      flex-wrap: wrap;\r\n      text-align: center;\r\n      justify-content: space-between;\r\n      padding-top: 10px;\r\n      margin-left: 80px;\r\n      margin-right: 80px;\r\n    }\r\n\r\n    .icon {\r\n      width: 100px;\r\n      padding-top: 10px;\r\n    }\r\n\r\n    .container {\r\n      flex: 1 0 25%;\r\n      padding: 5px;\r\n    }\r\n\r\n    .text {\r\n      margin: 15px 15px 5px 15px;\r\n      text-align: justify;\r\n    }\r\n\r\n    .button {\r\n      background-color: transparent;\r\n      border: none;\r\n      color: dodgerblue;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      height: 50px;\r\n      text-align: center;\r\n      text-decoration: none;\r\n      display: inline-block;\r\n      font-size: 16px;\r\n    }\r\n\r\n    .button:hover {\r\n      border-top: 3px solid #000;\r\n    }\r\n  `"</td>
         </tr>
       
         <tr>
-          <td>name</td><td>name</td><td>The name to say "Hello" to.</td><td>string</td><td>"World"</td>
+          <td>user</td><td>user</td><td>Data elements for user data GDPR.</td><td>UserData[]</td><td>[]</td>
         </tr>
       
         <tr>
-          <td>count</td><td>count</td><td>The number of times the button has been clicked.</td><td>number</td><td>0</td>
+          <td>usage</td><td>usage</td><td>Data usage elements.</td><td>DataUsage[]</td><td>[]</td>
+        </tr>
+      
+        <tr>
+          <td>management</td><td>management</td><td>User data rights.</td><td>DataManagement[]</td><td>[]</td>
+        </tr>
+      
+        <tr>
+          <td>protection</td><td>protection</td><td>How do we protect information.</td><td>ProtectionData[]</td><td>[]</td>
         </tr>
       
     </table>
     
         
             
+          
         
-    <h3>Slots</h3>
-    <table>
-      <tr>
-        <th>Name</th><th>Description</th>
-      </tr>
-      
-        <tr>
-          <td></td><td>This element has a slot</td>
-        </tr>
-      
-    </table>
-    
-        
-    <h3>CSS Shadow Parts</h3>
-    <table>
-      <tr>
-        <th>Name</th><th>Description</th>
-      </tr>
-      
-        <tr>
-          <td>button</td><td>The button</td>
-        </tr>
-      
-    </table>
-  
         
         
     
@@ -106,10 +98,20 @@
     </div>
     
 <footer>
-  <p>
-    Made with
-    <a href="https://github.com/PolymerLabs/lit-element-starter-ts">lit-element-starter-ts</a>
-  </p>
+  <div>
+    Icons made by
+    <ul>
+     <li><a target="_blank" href="https://www.flaticon.com/authors/catalin-fertu" title="Catalin Fertu">Catalin Fertu</a></li>
+     <li><a target="_blank" href="https://www.flaticon.com/free-icon/pin_2948253?term=location&related_id=2948253" title="bqlqn">bqlqn</a></li>
+     <li><a target="_blank" href="https://www.flaticon.com/authors/prosymbols" title="Prosymbols">Prosymbols</a></li>
+     <li><a target="_blank" href="https://www.flaticon.com/authors/surang" title="surang">surang</a></li>
+     <li><a target="_blank" href="https://www.flaticon.com/authors/ultimatearm" title="ultimatearm">ultimatearm</a></li>
+     <li><a target="_blank" href="https://www.flaticon.com/authors/srip" title="srip">srip</a></li>
+     <li><a target="_blank" href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a></li>
+     <li><a target="_blank" href="http://www.freepik.com/" title="Freepik">Freepik</a></li>
+    </ul>
+    from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+  </div>
 </footer>
   </body>
 </html>

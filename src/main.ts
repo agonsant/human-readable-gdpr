@@ -1,1 +1,1 @@
-export * from './my-element';
+export * from './brief-me-gdpr';

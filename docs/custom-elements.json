@@ -2,54 +2,68 @@
   "version": "experimental",
   "tags": [
     {
-      "name": "my-element",
-      "path": "./..\\src\\my-element.ts",
-      "description": "An example element.",
+      "name": "brief-me-gdpr",
+      "path": "./..\\src\\brief-me-gdpr.ts",
+      "description": "A Web Component for a human readable GDPR compliance",
       "attributes": [
         {
-          "name": "name",
-          "description": "The name to say \"Hello\" to.",
-          "type": "string",
-          "default": "\"World\""
+          "name": "user",
+          "description": "Data elements for user data GDPR.",
+          "type": "UserData[]",
+          "default": "[]"
         },
         {
-          "name": "count",
-          "description": "The number of times the button has been clicked.",
-          "type": "number",
-          "default": "0"
+          "name": "usage",
+          "description": "Data usage elements.",
+          "type": "DataUsage[]",
+          "default": "[]"
+        },
+        {
+          "name": "management",
+          "description": "User data rights.",
+          "type": "DataManagement[]",
+          "default": "[]"
+        },
+        {
+          "name": "protection",
+          "description": "How do we protect information.",
+          "type": "ProtectionData[]",
+          "default": "[]"
         }
       ],
       "properties": [
         {
           "name": "styles",
           "type": "CSSResult",
-          "default": "\"css`\\n    :host {\\n      display: block;\\n      border: solid 1px blue;\\n      padding: 16px;\\n      max-width: 800px;\\n    }\\n    h1 {\\n      color: red;\\n    }\\n  `\""
+          "default": "\"css`\\r\\n    h2 {\\r\\n      color: #000;\\r\\n      text-align: center;\\r\\n      font-size: 2em;\\r\\n    }\\r\\n    .wrapper {\\r\\n      display: flex;\\r\\n      flex-direction: column;\\r\\n      align-items: center;\\r\\n    }\\r\\n    .tab {\\r\\n      cursor: pointer;\\r\\n      padding: 10px 20px;\\r\\n      margin: 0px 2px;\\r\\n      background: #000;\\r\\n      display: inline-block;\\r\\n      color: #fff;\\r\\n      border-radius: 3px 3px 0px 0px;\\r\\n      box-shadow: 0 0.5rem 0.8rem #00000080;\\r\\n    }\\r\\n    .panels {\\r\\n      background: #fffffff6;\\r\\n      box-shadow: 0 2rem 2rem #00000080;\\r\\n      min-height: 200px;\\r\\n      max-width: 945px;\\r\\n      border-radius: 3px;\\r\\n      overflow: hidden;\\r\\n      padding: 20px;\\r\\n    }\\r\\n    .panel {\\r\\n      display: none;\\r\\n      animation: fadein 0.8s;\\r\\n    }\\r\\n    @keyframes fadein {\\r\\n      from {\\r\\n        opacity: 0;\\r\\n      }\\r\\n      to {\\r\\n        opacity: 1;\\r\\n      }\\r\\n    }\\r\\n    .panel-title {\\r\\n      font-size: 1.5em;\\r\\n      font-weight: bold;\\r\\n      text-align: center;\\r\\n    }\\r\\n    .radio {\\r\\n      display: none;\\r\\n    }\\r\\n    #one:checked ~ .panels #one-panel,\\r\\n    #two:checked ~ .panels #two-panel,\\r\\n    #three:checked ~ .panels #three-panel,\\r\\n    #four:checked ~ .panels #four-panel {\\r\\n      display: block;\\r\\n    }\\r\\n    #one:checked ~ .tabs #one-tab,\\r\\n    #two:checked ~ .tabs #two-tab,\\r\\n    #three:checked ~ .tabs #three-tab,\\r\\n    #four:checked ~ .tabs #four-tab {\\r\\n      background: #fffffff6;\\r\\n      color: #000;\\r\\n      border-top: 3px solid #000;\\r\\n    }\\r\\n\\r\\n    .card {\\r\\n      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\\r\\n      border: black;\\r\\n      border-radius: 0.5em;\\r\\n      border-style: solid;\\r\\n      transition: 0.3s;\\r\\n      flex: 1 0 25%;\\r\\n      margin: 5px 15px 5px 15px;\\r\\n      color: dodgerblue;\\r\\n    }\\r\\n\\r\\n    .card:hover {\\r\\n      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);\\r\\n    }\\r\\n\\r\\n    img {\\r\\n      border-radius: 5px 5px 0 0;\\r\\n    }\\r\\n\\r\\n    .items {\\r\\n      display: flex;\\r\\n      flex-direction: row;\\r\\n      flex-wrap: wrap;\\r\\n      text-align: center;\\r\\n      justify-content: space-between;\\r\\n      padding-top: 10px;\\r\\n      margin-left: 80px;\\r\\n      margin-right: 80px;\\r\\n    }\\r\\n\\r\\n    .icon {\\r\\n      width: 100px;\\r\\n      padding-top: 10px;\\r\\n    }\\r\\n\\r\\n    .container {\\r\\n      flex: 1 0 25%;\\r\\n      padding: 5px;\\r\\n    }\\r\\n\\r\\n    .text {\\r\\n      margin: 15px 15px 5px 15px;\\r\\n      text-align: justify;\\r\\n    }\\r\\n\\r\\n    .button {\\r\\n      background-color: transparent;\\r\\n      border: none;\\r\\n      color: dodgerblue;\\r\\n      font-weight: bold;\\r\\n      width: 100%;\\r\\n      height: 50px;\\r\\n      text-align: center;\\r\\n      text-decoration: none;\\r\\n      display: inline-block;\\r\\n      font-size: 16px;\\r\\n    }\\r\\n\\r\\n    .button:hover {\\r\\n      border-top: 3px solid #000;\\r\\n    }\\r\\n  `\""
         },
         {
-          "name": "name",
-          "attribute": "name",
-          "description": "The name to say \"Hello\" to.",
-          "type": "string",
-          "default": "\"World\""
+          "name": "user",
+          "attribute": "user",
+          "description": "Data elements for user data GDPR.",
+          "type": "UserData[]",
+          "default": "[]"
         },
         {
-          "name": "count",
-          "attribute": "count",
-          "description": "The number of times the button has been clicked.",
-          "type": "number",
-          "default": "0"
-        }
-      ],
-      "slots": [
+          "name": "usage",
+          "attribute": "usage",
+          "description": "Data usage elements.",
+          "type": "DataUsage[]",
+          "default": "[]"
+        },
         {
-          "name": "",
-          "description": "This element has a slot"
-        }
-      ],
-      "cssParts": [
+          "name": "management",
+          "attribute": "management",
+          "description": "User data rights.",
+          "type": "DataManagement[]",
+          "default": "[]"
+        },
         {
-          "name": "button",
-          "description": "The button"
+          "name": "protection",
+          "attribute": "protection",
+          "description": "How do we protect information.",
+          "type": "ProtectionData[]",
+          "default": "[]"
         }
       ]
     }
