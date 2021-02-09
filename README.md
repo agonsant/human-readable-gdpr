@@ -2,6 +2,10 @@
 
 Web Component for a human readable GDPR compliance
 
+## License
+
+The code and art-assets license are documented [here](./LICENSE.md)
+
 ## Setup
 
 Install dependencies:
